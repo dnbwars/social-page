@@ -1,0 +1,17 @@
+.navigation {
+  grid-area: n;
+  background-color: #ebebeb;
+  padding: 10px;
+  box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
+}
+
+.item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.item a.activeLink {
+  color: rgb(40, 40, 168);
+  font-size: 20px;
+}
+
