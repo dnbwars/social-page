@@ -1,0 +1,18 @@
+.content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.friends {
+  display: flex;
+  flex-direction: row;
+}
+
+.bestFirends {
+  margin-top: 10px;
+}
+
+.head {
+  font-size: 24px;
+}

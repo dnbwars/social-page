@@ -8,42 +8,31 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import Friends from "./components/Friends/Friends";
 
-const App = () => {
-  let posts = [
-    { id: 1, message: "Hi. How are you?", likeCount: 12 },
-    { id: 2, message: "I`m fine", likeCount: 11 },
-  ];
-
-  let dialogs = [
-    { id: 1, name: "Jecka" },
-    { id: 2, name: "Kristina" },
-    { id: 3, name: "Erika" },
-    { id: 4, name: "Alex" },
-  ];
-
-  let messages = [
-    { id: 1, note: "Hi" },
-    { id: 2, note: "How are you?" },
-    { id: 3, note: "Cool" },
-    { id: 4, note: "Never stop learning" },
-  ];
-
+const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="wrap">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Route path="/dialogs" render={ () => <Dialogs dialogs={dialogs} messages={messages} /> } />
-          <Route path="/profile" render={ () => <Profile posts={posts} />}  />
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
-        </div>
+    <div className="wrap">
+      <Header />
+      <Navbar state={props.onstate.sidebar} />
+      <div className="app-wrapper-content">
+        <Route
+          path="/dialogs"
+          render={() => <Dialogs state={props.onstate.dialogsPage} />}
+        />
+        <Route
+          path="/profile"
+          render={() => <Profile state={props.onstate.profilePage} />}
+        />
+        <Route path="/news" component={News} />
+        <Route path="/music" component={Music} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/friends" component={Friends} />
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
+//получаем из state.js через index.js массив через пропсы и передаем дальше в profile dialogs и navbar через пропсы
+//в момент отрисовки profile и dialogs, navbar надо передать дальше пропсы массива из index.js
 export default App;
