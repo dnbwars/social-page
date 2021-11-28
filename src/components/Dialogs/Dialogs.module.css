@@ -5,11 +5,13 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  background-color: brown!important;
+  background-color: rgb(165, 164, 164);
+  box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
 }
 
 .dialogsItems {
-    background-color: aquamarine;
+    background-color: rgb(127, 182, 255);
+    box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
     padding: 10px;
 }
 
@@ -17,15 +19,43 @@
   color: gold;
 }
 
-.dialog {
-
-}
-
 .messages {
-  background-color: blueviolet;
   padding: 10px;
 }
 
-.message {
+.messages {
+  display: flex;
+  flex-direction: column;
+}
 
+.createMessage {
+  margin: 0 0 15px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.input {
+  padding: 10px;
+  display: flex;
+  width: 50%;
+  border: none;
+  border-radius: 10px;
+}
+
+.messageButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-between;
 }

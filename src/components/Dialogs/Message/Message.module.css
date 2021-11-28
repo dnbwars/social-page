@@ -1,0 +1,19 @@
+.content {
+  padding: 10px;
+}
+
+.message:nth-child(2n) {
+  place-self: end;
+}
+
+.message {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ccc;
+  margin: 10px 0;
+  width: 200px;
+}

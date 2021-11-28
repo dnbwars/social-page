@@ -15,3 +15,10 @@
   font-size: 20px;
 }
 
+.item:nth-last-child(2) {
+  padding-top: 40px;
+}
+
+.logo {
+  padding-top: 160px;
+}
