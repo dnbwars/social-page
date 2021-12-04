@@ -10,7 +10,7 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
   }
 
   return (
@@ -18,7 +18,7 @@ const MyPosts = (props) => {
       <h3>My post</h3>
       <div className={s.posts}  >
         <div>
-          <textarea ref="{newPostElement"></textarea>
+          <textarea ref={newPostElement}></textarea>
         </div>
         <div>
           <button onClick={ addPost }>Add post</button>
@@ -31,9 +31,6 @@ const MyPosts = (props) => {
   );
 };
 
-function HandleClick() {
-  console.log('---', 'clicked')
-}
 
 //получаем из index => app => массив постов с лайками и сообщением через пропсы
 export default MyPosts;
