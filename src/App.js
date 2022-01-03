@@ -1,3 +1,4 @@
+import react from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -18,12 +19,15 @@ const App = (props) => {
       <div className="app-wrapper-content">
         <Route
           path="/dialogs"
-          render={() => <Dialogs state={props.onstate.dialogsPage} />}
+          render={() => <Dialogs state={props.onstate.dialogsPage} addMessage={props.addMessage}/>}
         />
         <Route
           path="/profile"
-          render={() => <Profile state={props.onstate.profilePage} />}
-        />
+          render={() => <Profile 
+            profilePage={props.onstate.profilePage} 
+            addPost={props.addPost} 
+            updateNewPostText={props.updateNewPostText}
+            /> } />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />
