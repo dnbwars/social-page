@@ -1,3 +1,4 @@
+import react from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -9,7 +10,6 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
-import { addPost } from "./redux/state";
 
 const App = (props) => {
   return (
@@ -24,8 +24,10 @@ const App = (props) => {
         <Route
           path="/profile"
           render={() => <Profile 
-            state={props.onstate.profilePage} 
-            addPost={props.addPost} /> } />
+            profilePage={props.onstate.profilePage} 
+            addPost={props.addPost} 
+            updateNewPostText={props.updateNewPostText}
+            /> } />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />

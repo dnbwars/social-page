@@ -7,6 +7,7 @@ let state = {
         posts: [
             { id: 1, message: "Hi. How are you?", likeCount: 12 },
             { id: 2, message: "I`m fine", likeCount: 11 }],
+        newPostText: 'text default'
     },
 
     dialogsPage: {
@@ -41,6 +42,13 @@ let state = {
     
 };
 
+// let newPostText = () => {
+    
+// };
+
+// state.profilePage.posts.push(updatePost);
+
+
 export let addPost = (postMessage) => {
     let newPost = {
         id: 5,
@@ -48,7 +56,12 @@ export let addPost = (postMessage) => {
         likeCount: 0
     };
     state.profilePage.posts.push(newPost);
-    rerenderEntireTree();
+    rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
 }
 
 export let addMessage = (postMessage) => {
@@ -57,7 +70,7 @@ export let addMessage = (postMessage) => {
         note: postMessage
     };
     state.dialogsPage.messages.push(newMessage);
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }
 
 export default state;
