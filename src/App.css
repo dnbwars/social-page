@@ -18,7 +18,7 @@
 .app-wrapper-content {
     grid-area: c;
     box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
-    background-color: #ebebeb;
+    background-color: var(--main-bg-color);
     color: red;
     height: 1000px;
   }
@@ -27,3 +27,12 @@ img {
     width: 100%;
     height: 200px;
   }
+
+/* style variable */
+
+
+element {
+  --main-bg-color: red;
+}
+
+
