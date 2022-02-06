@@ -14,7 +14,7 @@ import Friends from "./components/Friends/Friends";
 const App = (props) => {
   return (
     <div className="wrap">
-      <Header />
+      <Header/>
       <Navbar state={props.onstate.sidebar} />
       <div className="app-wrapper-content">
         <Route
@@ -25,8 +25,7 @@ const App = (props) => {
           path="/profile"
           render={() => <Profile 
             profilePage={props.onstate.profilePage} 
-            addPost={props.addPost} 
-            updateNewPostText={props.updateNewPostText}
+            dispatch={props.dispatch}
             /> } />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
