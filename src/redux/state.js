@@ -5,7 +5,7 @@ let store = {
         { id: 1, message: "Hi. How are you?", likeCount: 12 },
         { id: 2, message: "I`m fine", likeCount: 11 },
       ],
-      newPostText: "text default",
+      newPostText: "text default1",
     },
 
     dialogsPage: {
@@ -15,7 +15,8 @@ let store = {
         { id: 3, note: "Cool" },
         { id: 4, note: "Never stop learning, you know" },
       ],
-
+      newMessageText: "text default2",
+      
       dialogs: [
         { id: 1, name: "Jecka" },
         { id: 2, name: "Kristina" },
@@ -49,30 +50,16 @@ let store = {
     console.log("state changed ");
   },
 
-//   addPost() {
-//     let newPost = {
-//       id: 5,
-//       message: this._state.profilePage.newPostText,
-//       likeCount: 0,
-//     };
-//     this._state.profilePage.posts.push(newPost);
-//     this._state.profilePage.newPostText = "";
-//     this._rerenderEntireTree(this._state);
-//   },
-
-//   updateNewPostText(newText) {
-//     this._state.profilePage.newPostText = newText;
-//     this._rerenderEntireTree(this._state);
-//   },
-
-  addMessage(postMessage) {
-    let newMessage = {
-      id: 5,
-      note: postMessage,
-    };
-    this._state.dialogsPage.messages.push(newMessage);
-    this._rerenderEntireTree(this._state);
-  },
+  //   addPost() {
+  //     let newPost = {
+  //       id: 5,
+  //       message: this._state.profilePage.newPostText,
+  //       likeCount: 0,
+  //     };
+  //     this._state.profilePage.posts.push(newPost);
+  //     this._state.profilePage.newPostText = "";
+  //     this._rerenderEntireTree(this._state);
+  //   },
 
   subscribe(observer) {
     this._rerenderEntireTree = observer;
@@ -88,10 +75,24 @@ let store = {
       this._state.profilePage.posts.push(newPost);
       this._state.profilePage.newPostText = "";
       this._rerenderEntireTree(this._state);
+
     } else if (action.type === "UPDATE-NEW-POST-TEXT") {
       this._state.profilePage.newPostText = action.newText;
       this._rerenderEntireTree(this._state);
-    }
+
+    } else if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 5,
+        note: this._state.dialogsPage.newMessageText,
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._state.dialogsPage.newMessageText = "";
+      this._rerenderEntireTree(this._state);
+
+    } else if (action.type === "UPDATE-MESSAGE-TEXT") {
+      this._state.dialogsPage.newMessageText = action.newText;
+      this._rerenderEntireTree(this._state);
+    };
   },
 };
 

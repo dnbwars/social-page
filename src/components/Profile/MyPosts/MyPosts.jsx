@@ -18,6 +18,7 @@ const MyPosts = (props) => {
     props.dispatch(action);
   }
 
+
   return (
     <div>
       <h3>My posts</h3>
