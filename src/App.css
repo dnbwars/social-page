@@ -29,3 +29,14 @@ img {
   }
 
 /* style variable */
+:root {
+  --bg-color-text: rgba(31, 4, 4, 0.2);
+  --main-text-color: #fff;
+  --bg-main-blue-color: rgba(28, 115, 228, 0.801);
+
+  /* margin */
+  --main-space-xs: 10px;
+  --main-space-s: 20px;
+  --main-space-m: 40px;
+  --main-space-l: 60px;
+}
