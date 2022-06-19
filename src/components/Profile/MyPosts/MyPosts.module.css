@@ -5,3 +5,15 @@
 .posts {
   margin-top: 20px;
 }
+
+.input_field {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bg-color-text);
+  color: var(--main-text-color);
+  box-sizing: border-box;
+  margin-bottom: var(--main-space-s);
+}

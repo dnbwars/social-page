@@ -1,3 +1,8 @@
+const  ADD_POST = 'ADD-POST';
+const ADD_MESSAGE = "ADD-MESSAGE"
+const  UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const  UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
+
 let store = {
   _state: {
     profilePage: {
@@ -5,7 +10,7 @@ let store = {
         { id: 1, message: "Hi. How are you?", likeCount: 12 },
         { id: 2, message: "I`m fine", likeCount: 11 },
       ],
-      newPostText: "text default1",
+      newPostText: "text defaul111t1",
     },
 
     dialogsPage: {
@@ -15,14 +20,13 @@ let store = {
         { id: 3, note: "Cool" },
         { id: 4, note: "Never stop learning, you know" },
       ],
-      newMessageText: "text default2",
-      
       dialogs: [
         { id: 1, name: "Jecka" },
         { id: 2, name: "Kristina" },
         { id: 3, name: "Erika" },
         { id: 4, name: "Alex" },
       ],
+      newMessageText: "text",
     },
 
     sidebar: {
@@ -50,22 +54,12 @@ let store = {
     console.log("state changed ");
   },
 
-  //   addPost() {
-  //     let newPost = {
-  //       id: 5,
-  //       message: this._state.profilePage.newPostText,
-  //       likeCount: 0,
-  //     };
-  //     this._state.profilePage.posts.push(newPost);
-  //     this._state.profilePage.newPostText = "";
-  //     this._rerenderEntireTree(this._state);
-  //   },
-
   subscribe(observer) {
     this._rerenderEntireTree = observer;
   },
 
   dispatch(action) {
+
     if (action.type === "ADD-POST") {
       let newPost = {
         id: 5,
@@ -95,6 +89,14 @@ let store = {
     };
   },
 };
+
+export const addPostActionCreator = () => ({ type: ADD_POST })
+
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE})
+
+export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
+
+export const updateMessageTextActionCreator = (text) => ({ type: UPDATE_MESSAGE_TEXT, newText: text })
 
 window.store = store;
 

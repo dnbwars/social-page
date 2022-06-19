@@ -5,15 +5,16 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  background-color: rgb(165, 164, 164);
+  background-color: #e4e708dc;
   box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
   height: inherit;
 }
 
 .dialogsItems {
-    background-color: rgb(127, 182, 255);
+    background-color: var(--bg-main-blue-color);
     box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
     padding: 10px;
+    color: var(--main-text-color);
 }
 
 .dialogsItems .active {
@@ -30,7 +31,7 @@
 }
 
 .createMessage {
-  margin: 0 0 15px 10px;
+  margin: var(--main-space-xs);
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -40,9 +41,12 @@
 .input {
   padding: 10px;
   display: flex;
-  width: 50%;
+  width: 100%;
+  box-sizing: border-box;
   border: none;
   border-radius: 10px;
+  background-color: var(--bg-color-text);
+  color: var(--main-text-color);
 }
 
 .messageButton {
@@ -52,6 +56,9 @@
   box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
   font-size: 16px;
   align-self: flex-start;
+  cursor: pointer;
+  background-color: var(--bg-main-blue-color);
+  color: var(--main-text-color);
 }
 
 .messageContainer {
