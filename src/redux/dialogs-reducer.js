@@ -1,7 +1,7 @@
 const ADD_MESSAGE = "ADD-MESSAGE"
-const  UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
+const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
 
-let initialState = {
+let  initialState = {
     messages: [
         { id: 1, note: "Hi" },
         { id: 2, note: "How are you?" },
@@ -17,8 +17,7 @@ let initialState = {
       newMessageText: "text"
 };
 
-const dialogsReducer = (state = initialState, action) => {
-
+export const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case ADD_MESSAGE:

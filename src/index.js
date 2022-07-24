@@ -8,11 +8,11 @@ import { BrowserRouter } from "react-router-dom";
 
 
 let rerenderEntireTree = (state) => {
-
+debugger
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App onstate={state} dispatch={store.dispatch.bind(store)} /> 
+      <App onstate={state} dispatch={store.dispatch.bind(store)} store={store}/> 
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
@@ -31,3 +31,8 @@ store.subscribe(() => {
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 //Передаем массив данных пропсами в app из state
+
+/*
+  store.subscribe - нужно заново запросить state
+  store вызывает стрелочную функцию и в ней вызовется rerenderEntireTree и передается state
+*/
