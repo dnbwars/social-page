@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 import DialogItem from "./DialogItem/DialogsItem";
 import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
-import { addMessageActionCreator, updateMessageTextActionCreator } from "../../../src/redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-  let dialogsElements = props.dialogsPage.dialogs.map (d => <DialogItem name={d.name} id={d.id} /> );
+  
+  let dialogsElements = props.dialogs.map (d => <DialogItem name={d.name} id={d.id} /> );
 
-  let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.note} id={m.id} /> );
+  let messagesElements = props.messages.map(m => <Message message={m.note} id={m.id} /> );
 
   let addNewMessage = React.createRef();
 
   let addMessage = () => {
-    props.dispatch( addMessageActionCreator() );
+    props.addMessage();
   }
 
   let onMessageChange = () => {
     let text = addNewMessage.current.value;
-    let action = updateMessageTextActionCreator(text);
-    props.dispatch(action);
+    props.updateNewMessageText(text);
   }
 
   return (
