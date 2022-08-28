@@ -1,13 +1,10 @@
 import React from 'react';
 import s from './Friends.module.css'
 import Friend from './Friend';
-import StoreContext from '../../StoreContext';
 
 const Friends = () => {
 
-    return(
-        <StoreContext.Consumer>
-            { (store) => {
+    return (store) => {
 
                 let state = store.getState();   
                 
@@ -24,9 +21,5 @@ const Friends = () => {
                 </div> 
                 
             }
-            }
-    </StoreContext.Consumer>
-    )
-}
-
+        }
 export default Friends;
