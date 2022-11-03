@@ -8,6 +8,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import Map from "./components/MyMap/Map";
 
 const App = (props) => {
   
@@ -24,8 +25,11 @@ const App = (props) => {
           path="/profile"
           render={ () => <Profile />}/>
 
-        <Route path="/news" component={News} />
+        <Route 
+          path="/news" 
+          render={() => <News newsFilters={props.onstate.newsFilters} dispatch={props.dispatch} />}/>
         <Route path="/music" component={Music} />
+        <Route path="/map" component={Map} />
         <Route path="/settings" component={Settings} />
         <Route path="/friends" component={Friends}/>
       </div>
