@@ -18,7 +18,7 @@
 .app-wrapper-content {
   grid-area: c;
   box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
-  background-color: var(--bg-color-text);
+  background-color: var(--bg-main-color);
   color: red;
   height: 1000px;
   }
@@ -31,8 +31,10 @@ img {
 /* style variable */
 :root {
   --bg-color-text: rgba(31, 4, 4, 0.2);
-  --main-text-color: #fff;
+  --main-text-color: rgb(112, 112, 112);
   --bg-main-blue-color: rgba(28, 115, 228, 0.801);
+  --bg-main-color: #fefefe;
+  --bg-input-field: #ebebeb;
 
   /* margin */
   --main-space-xs: 10px;
