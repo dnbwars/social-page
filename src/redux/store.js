@@ -36,6 +36,9 @@ let store = {
         { name: "Alex", logo: <img src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png"/>,},
       ]
     },
+    newsFilters: {
+      filters: [{filter: 'car'}, {filter: "sport"}]
+    }
   },
 
   getState() {

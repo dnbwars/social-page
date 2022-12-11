@@ -7,24 +7,31 @@ let initialState = {
         { id: 2, message: "I`m fine", likeCount: 11 },
         { id: 3, message: "I`m fine", likeCount: 11, type:"reposted" },
       ],
-      newPostText: "text defaul111t1"
+      newPostText: "text default"
 };
 
-export const profileReducer = (state = initialState, action) => {
-    switch (action.type) {
-
-        case ADD_POST:
+const profileReducer = (state = initialState, action) => {
+    
+    switch(action.type) {
+        case ADD_POST: {
             let newPost = {
-                id: 5,
+                id: 4,
                 message: state.newPostText,
                 likeCount: 0,
               };
-              state.posts.push(newPost);
-              state.newPostText = "";
+              let stateCopy = {...state};
+              stateCopy.posts = [...state.posts];
+              stateCopy.posts.push(newPost);
+              stateCopy.newPostText = " ";
+              return stateCopy;
+            }
 
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-        
+        case UPDATE_NEW_POST_TEXT: {
+            let stateCopy = {...state};
+            
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
         default: 
             return state;
     }

@@ -17,7 +17,7 @@ let  initialState = {
       newMessageText: "text"
 };
 
-export const dialogsReducer = (state = initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case ADD_MESSAGE:

@@ -28,6 +28,11 @@ const Navbar = (props) => {
         </NavLink>
       </div>
       <div className={s.item}>
+        <NavLink activeClassName={s.activeLink} to="/map">
+          My Map
+        </NavLink>
+      </div>
+      <div className={s.item}>
         <NavLink activeClassName={s.activeLink} to="/settings">
           Settings
         </NavLink>
@@ -37,7 +42,7 @@ const Navbar = (props) => {
           Friends
         </NavLink>
       </div> */}
-      <div className={s.logo}><Friends friends={props.state.friends} /></div>
+      <div className={s.logo}><Friends/></div>
     </nav>
   )
 };
