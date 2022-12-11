@@ -58,7 +58,7 @@
   align-self: flex-start;
   cursor: pointer;
   background-color: var(--bg-main-blue-color);
-  color: var(--main-text-color);
+  color: var(--bg-color-text-button);
 }
 
 .messageContainer {

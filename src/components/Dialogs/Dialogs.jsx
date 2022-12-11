@@ -28,8 +28,8 @@ const Dialogs = (props) => {
       <div className={s.messageContainer}>
         <ul className={s.messages}>{messagesElements}</ul>
         <div className={s.createMessage}>
-          <textarea onChange={ onMessageChange } className={s.input} ref={addNewMessage} value={props.newMessageText}/>
-          <button onClick={ addMessage } className={s.messageButton}>Отправить</button>
+          <textarea onChange={ onMessageChange } class="input_field_bg " ref={addNewMessage} value={props.newMessageText}/>
+          <button onClick={ addMessage } class="g_button">Отправить</button>
         </div>
       </div>
     </div>

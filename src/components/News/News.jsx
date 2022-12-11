@@ -8,7 +8,7 @@ const News = (props) => {
         <div className={s.content}>
             <div className={s.newsContainer}>
                 <div className={s.newsFilters}>
-                    <NewsFilter filter={props.state.filter}/>
+                    {/* <NewsFilter filter={props.state.filter}/> */}
                 </div>
             </div>
         </div>
