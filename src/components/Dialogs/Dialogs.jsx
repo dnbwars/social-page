@@ -11,7 +11,7 @@ const Dialogs = (props) => {
   let messagesElements = props.messages.map(m => <Message message={m.note} id={m.id} /> );
 
   let addNewMessage = React.createRef();
-
+debugger
   let addMessage = () => {
     props.addMessage();
   }
@@ -28,7 +28,7 @@ const Dialogs = (props) => {
       <div className={s.messageContainer}>
         <ul className={s.messages}>{messagesElements}</ul>
         <div className={s.createMessage}>
-          <textarea onChange={ onMessageChange } class="input_field_bg " ref={addNewMessage} value={props.newMessageText}/>
+          <textarea onChange={ onMessageChange } class="input_field_bg" ref={addNewMessage} value={props.newMessageText}/>
           <button onClick={ addMessage } class="g_button">Отправить</button>
         </div>
       </div>

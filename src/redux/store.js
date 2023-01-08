@@ -1,6 +1,7 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
+import myMusicReducer from "./myMusic-reducer";
 
 let store = {
   _state: {
@@ -36,8 +37,16 @@ let store = {
         { name: "Alex", logo: <img src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png"/>,},
       ]
     },
+
     newsFilters: {
-      filters: [{filter: 'car'}, {filter: "sport"}]
+      filters: [{id: 1, filter: 'car'}, {id: 2, filter: "sport"}]
+    },
+
+    myMusic: {
+      musicFilter: [
+        { name: 'popular' }, 
+        { name: "new" }
+      ]
     }
   },
 
@@ -58,6 +67,7 @@ let store = {
     this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+    this._state.myMusic = myMusicReducer(this._state.myMusic, action);
 
     this._rerenderEntireTree(this._state);
   },

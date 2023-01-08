@@ -9,7 +9,6 @@ let initialState = {
       ],
       newPostText: "text default"
 };
-
 const profileReducer = (state = initialState, action) => {
     
     switch(action.type) {
@@ -19,6 +18,7 @@ const profileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likeCount: 0,
               };
+
               let stateCopy = {...state};
               stateCopy.posts = [...state.posts];
               stateCopy.posts.push(newPost);

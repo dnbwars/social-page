@@ -34,7 +34,6 @@ let mapStateToProps = (state) => {
     newPostText: state.profilePage.newPostText
   }
 }
-
 let mapDispatchToProps = (dispatch) => {
   return {
     updateNewPostText: (text) => {
