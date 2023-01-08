@@ -5,7 +5,7 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  background-color: #e4e708dc;
+  background-color: var(--bg-national);
   box-shadow: 0 0 14px -4px rgb(0 0 0 / 75%);
   height: inherit;
 }
